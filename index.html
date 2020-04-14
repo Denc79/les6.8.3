@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h1>Форма, флажки, кнопки</h1>
+
+  <form>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check1">
+    <label class="form-check-label" for="check1">
+      флажок 1
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check2">
+    <label class="form-check-label" for="check2">
+      флажок 2
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check3">
+    <label class="form-check-label" for="check3">
+      флажок 3
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check4">
+    <label class="form-check-label" for="check4">
+      флажок 4
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="check5">
+    <label class="form-check-label" for="check5">
+      флажок 5
+    </label>
+  </div>
+
+
+
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="radios" ❶ id="radios1" value="option1" ❷>
+    <label class="form-check-label" for="radios1">
+      опция 1
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="radios" ❶ id="radios2" value="option2" ❷>
+    <label class="form-check-label" for="radios2">
+      опция 2
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="radios" ❶ id="radios3" value="option3" ❷>
+    <label class="form-check-label" for="radios3">
+      опция 3
+    </label>
+  </div>
+  </form>
+
+  <button type="button" class="btn btn-dark">А это просто тёмная кнопка</button>
+
+<script type="text/javascript">
+	const maxAllowedChecks = 2; 
+function trackChecks(arg) {
+
+  let checkCount = $("input[type=checkbox]:checked").length;
+  if (checkCount >= maxAllowedChecks) {  
+    $("input[type=checkbox]:not(:checked)").prop("disabled", true)
+  } else {
+    $("input[type=checkbox]:not(:checked)").prop("disabled", false);
+  }
+}
+
+function trackRadios() {
+  $("input[type=radio]").prop("disabled", true);
+}
+
+function init(){
+
+	$('input[type=checkbox]').change(trackChecks);
+	  $("input[type=radio]").change(trackRadios);
+}
+
+$(document).ready(init);
+
+
+</script>
+
+
+</body>
+</html>
